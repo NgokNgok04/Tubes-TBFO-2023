@@ -1,0 +1,180 @@
+##### State-Input-TOP-NextState-ContentStack ######
+
+ATT class=" $ ATTCONTENT Class_$
+ATT id=" $ ATTCONTENT Id_$
+ATT style=" $ ATTCONTENT Style_$
+ATTCONTENT %" $ ATT e
+
+Q <html Z ATT Html_Z
+ATT > Html H Html_Z
+
+H <head Html ATT Head_Html
+ATT > Head HC Head_Html
+HC </head> Head B e
+
+HC <title Head ATT Title_Head
+ATT > Title HC Title_Head
+HC </title> Title HC e
+
+HC <script Head ATT Script_Head
+ATT src=" Script ATTCONTENT Source_Script
+ATT > Script HC Script_Head
+HC </script> Script HC e
+
+HC <link Head ATT Link_Head
+ATT rel="%" Link ATT RelationLink
+ATT href=" Link ATTCONTENT HypertextReference_Link
+ATT href=" RelationLink ATTCONTENT HypertextReference_RelationLink
+ATT > RelationLink HC e
+
+B <body Html ATT Body_Html
+ATT > Body BC Body_Html
+BC </body> Body BOQ e
+BOQ </html> Html F e
+
+BC <h1 Body ATT H1_Body
+BC <h2 Body ATT H2_Body
+BC <h3 Body ATT H3_Body
+BC <h4 Body ATT H4_Body
+BC <h5 Body ATT H5_Body
+BC <h6 Body ATT H6_Body
+ATT > H1 BC H1_Body
+ATT > H2 BC H2_Body
+ATT > H3 BC H3_Body
+ATT > H4 BC H4_Body
+ATT > H5 BC H5_Body
+ATT > H6 BC H6_Body
+BC </h1> H1 BC $
+BC </h2> H2 BC $
+BC </h3> H3 BC $
+BC </h4> H4 BC $
+BC </h5> H5 BC $
+BC </h6> H6 BC $
+
+BC <p Body ATT P_Body
+ATT > P BC P_Body
+BC </p> P BC e
+
+BC <br Body ATT Br_Body
+BC <br P ATT Br_P 
+BC <br H1 ATT Br_H1
+BC <br H2 ATT Br_H2
+BC <br H3 ATT Br_H3
+BC <br H4 ATT Br_H4
+BC <br H5 ATT Br_H5
+BC <br H6 ATT Br_H6
+ATT > Br BC Br_$
+BC </br> Br BC e
+
+BC <em Body ATT Em_Body
+BC <em P ATT Em_P 
+BC <em H1 ATT Em_H1
+BC <em H2 ATT Em_H2
+BC <em H3 ATT Em_H3
+BC <em H4 ATT Em_H4
+BC <em H5 ATT Em_H5
+BC <em H6 ATT Em_H6
+ATT > Em BC Em_$
+BC </em> Em BC e
+
+BC <b Body ATT B_Body
+BC <b P ATT B_P 
+BC <b H1 ATT B_H1
+BC <b H2 ATT B_H2
+BC <b H3 ATT B_H3
+BC <b H4 ATT B_H4
+BC <b H5 ATT B_H5
+BC <b H6 ATT B_H6
+ATT > B BC B_$
+BC </b> B BC e
+
+BC <abbr Body ATT Abbr_Body
+BC <abbr P ATT Abbr_P 
+BC <abbr H1 ATT Abbr_H1
+BC <abbr H2 ATT Abbr_H2
+BC <abbr H3 ATT Abbr_H3
+BC <abbr H4 ATT Abbr_H4
+BC <abbr H5 ATT Abbr_H5
+BC <abbr H6 ATT Abbr_H6
+ATT > Abbr BC Abbr_$
+BC </abbr> Abbr BC e
+
+BC <strong Body ATT Strong_Body
+BC <strong P ATT Strong_P 
+BC <strong H1 ATT Strong_H1
+BC <strong H2 ATT Strong_H2
+BC <strong H3 ATT Strong_H3
+BC <strong H4 ATT Strong_H4
+BC <strong H5 ATT Strong_H5
+BC <strong H6 ATT Strong_H6
+ATT > Strong BC Strong_$
+BC </strong> Strong BC e
+
+BC <small Body ATT Small_Body
+BC <small P ATT Small_P 
+BC <small H1 ATT Small_H1
+BC <small H2 ATT Small_H2
+BC <small H3 ATT Small_H3
+BC <small H4 ATT Small_H4
+BC <small H5 ATT Small_H5
+BC <small H6 ATT Small_H6
+ATT > Small BC Small_$
+BC </small> Small BC e
+
+BC <hr Body ATT Hr_Body
+ATT > Hr BC Hr_Body
+BC </hr> Hr BC e
+
+
+
+#####   Deskripsi input   #####
+% # any string
+
+#####   Deskripsi state   #####
+Q # State pembuka html (<html>)
+H # state pembuka head  (<head>)
+HC # state content dari head include penutup head (</head>)
+B # state pembuka body (<body>)
+BC # state content dari body include penutup body (</body>)
+BOQ # state diantara body dan penutup html
+F # state final
+ATT # state atribut garis besar
+ATTCONTENT # state atribut spesifik (Class dan ID)
+
+#### Deskripsi stack #####
+Z       --> Starting stack
+Html    --> html
+Head    --> head
+Body    --> body
+Title   --> title
+Link    --> link
+Script  --> script
+H1      --> h1
+H2      --> h2
+H3      --> h3
+H4      --> h4
+H5      --> h5
+H6      --> h6
+P       --> p
+Br      --> br
+Em      --> em
+B       --> b
+Abbr    --> abbr
+Strong  --> strong
+Small   --> small
+Hr      --> hr
+Div     --> div
+A       --> a
+Img     --> img
+Button  --> button
+Form    --> form
+Input   --> input
+Table   --> table
+Tr      --> tr
+Td      --> td
+Th      --> th
+Class   --> class
+Id      --> id
+$       --> any stack
+#####    Deskripsi input    #####
+%       --> any
