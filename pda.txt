@@ -125,10 +125,54 @@ BC <hr Body ATT Hr_Body
 ATT > Hr BC Hr_Body
 BC </hr> Hr BC e
 
-
-
 #####   Deskripsi input   #####
-% # any string
+class="
+id="
+style="
+%" # any string
+<html
+>
+<head
+</head>
+<title
+</title>
+<script
+src="
+</script>
+<link
+rel="%"
+href="
+<body
+</body>
+</html>
+<h1
+<h2
+<h3
+<h4
+<h5
+<h6
+</h1>
+</h2>
+</h3>
+</h4>
+</h5>
+</h6>
+<p
+</p>
+<br
+</br>
+<em
+</em>
+<b
+</b>
+<abbr
+</abbr>
+<strong
+</strong>
+<small
+</small>
+<hr
+</hr>
 
 #####   Deskripsi state   #####
 Q # State pembuka html (<html>)
@@ -142,39 +186,46 @@ ATT # state atribut garis besar
 ATTCONTENT # state atribut spesifik (Class dan ID)
 
 #### Deskripsi stack #####
-Z       --> Starting stack
-Html    --> html
-Head    --> head
-Body    --> body
-Title   --> title
-Link    --> link
-Script  --> script
-H1      --> h1
-H2      --> h2
-H3      --> h3
-H4      --> h4
-H5      --> h5
-H6      --> h6
-P       --> p
-Br      --> br
-Em      --> em
-B       --> b
-Abbr    --> abbr
-Strong  --> strong
-Small   --> small
-Hr      --> hr
-Div     --> div
-A       --> a
-Img     --> img
-Button  --> button
-Form    --> form
-Input   --> input
-Table   --> table
-Tr      --> tr
-Td      --> td
-Th      --> th
-Class   --> class
-Id      --> id
-$       --> any stack
-#####    Deskripsi input    #####
-%       --> any
+Z       # Starting stack
+Html    # html
+Head    # head
+Body    # body
+Title   # title
+Link    # link
+Script  # script
+H1      # h1
+H2      # h2
+H3      # h3
+H4      # h4
+H5      # h5
+H6      # h6
+P       # p
+Br      # br
+Em      # em
+B       # b
+Abbr    # abbr
+Strong  # strong
+Small   # small
+Hr      # hr
+Div     # div
+A       # a
+Img     # img
+Button  # button
+Form    # form
+Input   # input
+Table   # table
+Tr      # tr
+Td      # td
+Th      # th
+Class   # class
+Id      # id
+$       # any stack
+
+##### Start State #####
+Q
+
+##### Start Stack #####
+Z
+
+##### Final States #####
+F
