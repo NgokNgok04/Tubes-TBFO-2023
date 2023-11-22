@@ -7,23 +7,71 @@ def split_komen(string):
 
 def read_PDA(PDA_Path):
     # input path ke file .txt
+    states_set = []
+    input_alphabet = []
+    stack_alphabet = []
+    Transition_Functions = []
+    final_states = []
     with open(PDA_Path, 'r') as PDA_file:
-        states_set = split_komen(PDA_file.readline()).split()       # array of states
-        input_alphabet = split_komen(PDA_file.readline()).split()   # array of alphabets
-        stack_alphabet = split_komen(PDA_file.readline()).split()   # array of stack symbols
-        start_state = split_komen(PDA_file.readline()).split()[0]   # start state string
-        start_stack = split_komen(PDA_file.readline()).split()[0]   # start stack string
-        final_states = split_komen(PDA_file.readline()).split()     # array of final states
-        isEmptyStack = split_komen(PDA_file.readline()).split()[0]  # Kalau 'E' juga accepts kalau empty stack
-        Transition_Functions = []
         line = PDA_file.readline()
+        phase = 0
         while (line != ""): # kosong artinya end of file
+            if (line[0] == '#'): phase += 1
             line = split_komen(line).split()
-            Trans_Function = line[:4] + [line[4]]
-            Trans_Function[4] = Trans_Function[4].split('_')
-            if (Trans_Function[4] == ['e']):
-                Trans_Function[4] = []
-            Trans_Function = tuple(Trans_Function)
-            Transition_Functions.append(Trans_Function)
+            if (phase == 1): # baca transition function
+                if (len(line) > 4):
+                    Trans_Function = line[:4] + [line[4]]
+                    Trans_Function[4] = Trans_Function[4].split('_')
+                    if (Trans_Function[4] == ['e']):
+                        Trans_Function[4] = []
+                    Trans_Function = tuple(Trans_Function)
+                    Transition_Functions.append(Trans_Function)
+            elif (phase == 2): # baca input alphabet
+                input_alphabet += line
+            elif (phase == 3): # baca states
+                states_set += line
+            elif (phase == 4): # baca stack alphabet
+                stack_alphabet += line
+            elif (phase == 5): # baca start state
+                if (len(line) > 0):
+                    start_state = line[0]
+            elif (phase == 6): # baca start stack
+                if (len(line) > 0):
+                    start_stack = line[0]
+            else: # baca final states
+                final_states += line
             line = PDA_file.readline()
-    return states_set, input_alphabet, stack_alphabet, start_state, start_stack, final_states, isEmptyStack, Transition_Functions
+    return states_set, input_alphabet, stack_alphabet, start_state, start_stack, final_states, Transition_Functions
+
+"""Format PDA
+##### State-Input-TOP-NextState-ContentStack ######
+State Input TOP NextState ContentStack # ganti
+State Input TOP NextState Content_Stack # push (dipisahkan dengan '_')
+State Input TOP NextState e # pop
+
+#####   Deskripsi input   #####
+a
+b
+c
+
+#####   Deskripsi state   #####
+A
+B
+C
+
+#### Deskripsi stack #####
+X
+Y
+Z
+
+##### Start State #####
+A
+
+##### Start Stack #####
+Z
+
+##### Final States #####
+B
+C
+
+"""
