@@ -122,13 +122,103 @@ ATT > Small BC Small_$
 BC </small> Small BC e
 
 BC <hr Body ATT Hr_Body
-ATT > Hr BC Hr_Body
-BC </hr> Hr BC e
+BC <hr P ATT Hr_P 
+BC <hr H1 ATT Hr_H1
+BC <hr H2 ATT Hr_H2
+BC <hr H3 ATT Hr_H3
+BC <hr H4 ATT Hr_H4
+BC <hr H5 ATT Hr_H5
+BC <hr H6 ATT Hr_H6
+ATT > Hr BC e
 
+BC <div Body ATT Div_Body
+BC <div P ATT Div_P 
+BC <div H1 ATT Div_H1
+BC <div H2 ATT Div_H2
+BC <div H3 ATT Div_H3
+BC <div H4 ATT Div_H4
+BC <div H5 ATT Div_H5
+BC <div H6 ATT Div_H6
+ATT > Div BC Div_$
+BC <div Div ATT 
+BC </div> Div BC e
 
+BC <a Body ATT A_Body
+BC <a P ATT A_P 
+BC <a H1 ATT A_H1
+BC <a H2 ATT A_H2
+BC <a H3 ATT A_H3
+BC <a H4 ATT A_H4
+BC <a H5 ATT A_H5
+BC <a H6 ATT A_H6
+ATT href=" A ATTCONTENT HypertextReference_A
+ATTCONTENT %" HypertextReference ATT e
+ATT > A BC A_$
+BC </a> Div BC e
+
+BC <img Body ATT Img_Body
+ATT src="%" Img ATT SourceImg
+ATT alt=" Img ATTCONTENT Alternative_Img
+ATT alt=" SourceImg ATTCONTENT Alternative_SourceImg
+ATT > SourceImg BC e
+
+BC <button Body ATT Button_Body
+ATT type=" Button ATTBUTTON Type_Button
+ATTBUTTON submit" Type ATT e
+ATTBUTTON reset" Type ATT e
+ATTBUTTON button" Type ATT e
+ATT > Button BC Button_Body
+BC </button> Button BC e
+
+BC <form Body ATT Form_Body
+ATT action=" Form ATTCONTENT Action_Form
+ATT action=" MethodForm ATTCONTENT Action_Form
+ATT method=" Form ATTFORM Form
+ATTFORM get" Form ATT MethodForm
+ATTFORM post" Form ATT MethodForm
+ATT > Form BC Form_Body
+ATT > MethodForm BC MethodForm_Body
+BC </form> Form BC e
+BC </form> MethodForm BC e
+
+BC <input Body ATT Input_Body
+ATT type=" Input ATTInput Type_Input
+ATTINPUT text" Type ATT e
+ATTINPUT password" Type ATT e
+ATTINPUT email" Type ATT e
+ATTINPUT number" Type ATT e
+ATTINPUT checkbox" Type ATT e
+ATT > Input BC e
+
+BC <table Body ATT Table_Body
+ATT > Table TC Table_Body
+TC </table> Table BC e
+
+TC <tr Table ATT TableRow_Table
+TC <tr TableRow ATT TableRow_TableRow
+TC <tr TableData ATT TableRow_TableData
+TC <tr TableHeader ATT TableRow_TableHeader
+ATT > TableRow TC TableRow_$
+TC </tr> TableRow TC e
+
+TC <td Table ATT TableData_Table
+TC <td TableRow ATT TableData_TableRow
+TC <td TableData ATT TableData_TableData
+TC <td TableHeader ATT TableData_TableHeader
+ATT > TableData TC TableData_$
+TC </td> TableData TC e
+
+TC <th Table ATT TableHeader_Table
+TC <th TableRow ATT TableHeader_TableRow
+TC <th TableData ATT TableHeader_TableData
+TC <th TableHeader ATT TableHeader_TableHeader
+ATT > TableHeader TC TableHeader_$
+TC </th> TableHeader TC e
 
 #####   Deskripsi input   #####
 % # any string
+tr td th
+ATT rel="%" Link ATT RelationLink
 
 #####   Deskripsi state   #####
 Q # State pembuka html (<html>)
@@ -138,8 +228,13 @@ B # state pembuka body (<body>)
 BC # state content dari body include penutup body (</body>)
 BOQ # state diantara body dan penutup html
 F # state final
+TC # state table content
 ATT # state atribut garis besar
 ATTCONTENT # state atribut spesifik (Class dan ID)
+ATTFORM # state atribut spesifik (Form)
+ATTBUTTON # state atribut spesifik (Button)
+ATTINPUT # state atribut spesifik (Input)
+$ # any stack
 
 #### Deskripsi stack #####
 Z       --> Starting stack
