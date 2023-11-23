@@ -44,12 +44,12 @@ ATT > H3 BC H3_Body
 ATT > H4 BC H4_Body
 ATT > H5 BC H5_Body
 ATT > H6 BC H6_Body
-BC </h1> H1 BC $
-BC </h2> H2 BC $
-BC </h3> H3 BC $
-BC </h4> H4 BC $
-BC </h5> H5 BC $
-BC </h6> H6 BC $
+BC </h1> H1 BC e
+BC </h2> H2 BC e
+BC </h3> H3 BC e
+BC </h4> H4 BC e
+BC </h5> H5 BC e
+BC </h6> H6 BC e
 
 BC <p Body ATT P_Body
 ATT > P BC P_Body
@@ -63,7 +63,7 @@ BC <br H3 ATT Br_H3
 BC <br H4 ATT Br_H4
 BC <br H5 ATT Br_H5
 BC <br H6 ATT Br_H6
-ATT > Br BC Br_$
+ATT > Br BC Br
 BC </br> Br BC e
 
 BC <em Body ATT Em_Body
@@ -74,7 +74,7 @@ BC <em H3 ATT Em_H3
 BC <em H4 ATT Em_H4
 BC <em H5 ATT Em_H5
 BC <em H6 ATT Em_H6
-ATT > Em BC Em_$
+ATT > Em BC Em
 BC </em> Em BC e
 
 BC <b Body ATT B_Body
@@ -85,7 +85,7 @@ BC <b H3 ATT B_H3
 BC <b H4 ATT B_H4
 BC <b H5 ATT B_H5
 BC <b H6 ATT B_H6
-ATT > B BC B_$
+ATT > B BC B
 BC </b> B BC e
 
 BC <abbr Body ATT Abbr_Body
@@ -96,7 +96,7 @@ BC <abbr H3 ATT Abbr_H3
 BC <abbr H4 ATT Abbr_H4
 BC <abbr H5 ATT Abbr_H5
 BC <abbr H6 ATT Abbr_H6
-ATT > Abbr BC Abbr_$
+ATT > Abbr BC Abbr
 BC </abbr> Abbr BC e
 
 BC <strong Body ATT Strong_Body
@@ -107,7 +107,7 @@ BC <strong H3 ATT Strong_H3
 BC <strong H4 ATT Strong_H4
 BC <strong H5 ATT Strong_H5
 BC <strong H6 ATT Strong_H6
-ATT > Strong BC Strong_$
+ATT > Strong BC Strong
 BC </strong> Strong BC e
 
 BC <small Body ATT Small_Body
@@ -118,7 +118,7 @@ BC <small H3 ATT Small_H3
 BC <small H4 ATT Small_H4
 BC <small H5 ATT Small_H5
 BC <small H6 ATT Small_H6
-ATT > Small BC Small_$
+ATT > Small BC Small
 BC </small> Small BC e
 
 BC <hr Body ATT Hr_Body
@@ -139,7 +139,7 @@ BC <div H3 ATT Div_H3
 BC <div H4 ATT Div_H4
 BC <div H5 ATT Div_H5
 BC <div H6 ATT Div_H6
-ATT > Div BC Div_$
+ATT > Div BC Div
 BC <div Div ATT 
 BC </div> Div BC e
 
@@ -152,8 +152,7 @@ BC <a H4 ATT A_H4
 BC <a H5 ATT A_H5
 BC <a H6 ATT A_H6
 ATT href=" A ATTCONTENT HypertextReference_A
-ATTCONTENT %" HypertextReference ATT e
-ATT > A BC A_$
+ATT > A BC A
 BC </a> Div BC e
 
 BC <img Body ATT Img_Body
@@ -198,21 +197,21 @@ TC <tr Table ATT TableRow_Table
 TC <tr TableRow ATT TableRow_TableRow
 TC <tr TableData ATT TableRow_TableData
 TC <tr TableHeader ATT TableRow_TableHeader
-ATT > TableRow TC TableRow_$
+ATT > TableRow TC TableRow
 TC </tr> TableRow TC e
 
 TC <td Table ATT TableData_Table
 TC <td TableRow ATT TableData_TableRow
 TC <td TableData ATT TableData_TableData
 TC <td TableHeader ATT TableData_TableHeader
-ATT > TableData TC TableData_$
+ATT > TableData TC TableData
 TC </td> TableData TC e
 
 TC <th Table ATT TableHeader_Table
 TC <th TableRow ATT TableHeader_TableRow
 TC <th TableData ATT TableHeader_TableData
 TC <th TableHeader ATT TableHeader_TableHeader
-ATT > TableHeader TC TableHeader_$
+ATT > TableHeader TC TableHeader
 TC </th> TableHeader TC e
 
 #####   Deskripsi input   #####

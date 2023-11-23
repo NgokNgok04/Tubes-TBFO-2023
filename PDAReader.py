@@ -37,7 +37,7 @@ def read_PDA(PDA_Path):
                     start_state = line[0]
             elif (phase == 6): # baca start stack
                 if (len(line) > 0):
-                    start_stack = line[0]
+                    start_stack = line[0].split('_')
             else: # baca final states
                 final_states += line
             line = PDA_file.readline()

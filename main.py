@@ -1,5 +1,15 @@
 import sys
 import PDAReader
+def Modify(Stack, Trans_Func):
+    State = Trans_Func[3]
+    if (Trans_Func[4] == []):
+        NStack = Stack[1:]
+    elif(Trans_Func[4] == ['$']):
+        tempstack = Trans_Func[4] + []
+        if (tempstack[len(tempstack) - 1] == '$'): tempstack[len(tempstack) - 1] = Stack[0]
+        NStack = tempstack + Stack[1:]
+    else: NStack = Trans_Func[4] + Stack[1:]
+    return State, NStack
 
 #input
 if (len(sys.argv) == 1):
@@ -15,8 +25,35 @@ else:
 states_set, input_alphabet, stack_alphabet, state, stack, final_states, Transition_Functions = PDAReader.read_PDA(file_PDA)
 remaining_input = [] # ganti dengan hasil parse HTML, misal ['a', 'b', 'dfvsdfvdfvadfv']
 
+found = True
 while (len(remaining_input) > 0):
-    # proses
-    break
+    found = False
+    for i in range(len(Transition_Functions)): # cari input
+        if((Transition_Functions[i][0] == state) and (Transition_Functions[i][1] == remaining_input[0]) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
+            found = True
+            state, stack = Modify(stack, Transition_Functions[i])
+            remaining_input = remaining_input[1:]
+            break
+    if (not found): # cari input epsilon
+        for i in range(len(Transition_Functions)):
+            if((Transition_Functions[i][0] == state) and (Transition_Functions[i][1] == 'e') and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
+                found = True
+                state, stack = Modify(stack, Transition_Functions[i])
+                break
+    if (not found): break
+if (not found): print("Syntax Error")
+elif state in final_states:
+    print("Accepted")
+else:
+    while(found):
+        found = False
+        for i in range(len(Transition_Functions)):
+            if((Transition_Functions[i][0] == state) and (Transition_Functions[i][1] == 'e') and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
+                found = True
+                state, stack = Modify(stack, Transition_Functions[i])
+                if state in final_states: found = False
+                break
+    if state in final_states: print("Accepted")
+    else: print("Syntax Error")
 
 # python3 main.py pda.txt
