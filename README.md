@@ -9,7 +9,7 @@
 
 ## General Information <a name="general-information"></a>
 - HTML checker with Push Down Automata (PDA) Concept
-- PDA hardcoded in .txt file
+- PDA not hardcoded, in .txt file
 - HTML files for testing located in tests folder 
 - Contributors :
   1. 13522064 Devinzen
