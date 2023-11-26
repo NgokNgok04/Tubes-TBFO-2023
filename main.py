@@ -4,7 +4,7 @@ def Modify(Stack, Trans_Func):
     State = Trans_Func[3]
     if (Trans_Func[4] == []):
         NStack = Stack[1:]
-    elif(Trans_Func[4] == ['$']):
+    elif(Trans_Func[4][len(Trans_Func[4]) - 1] == '$'):
         tempstack = Trans_Func[4] + []
         if (tempstack[len(tempstack) - 1] == '$'): tempstack[len(tempstack) - 1] = Stack[0]
         NStack = tempstack + Stack[1:]
@@ -23,15 +23,17 @@ else:
     file_HTML = sys.argv[2]
 
 states_set, input_alphabet, stack_alphabet, state, stack, final_states, Transition_Functions = PDAReader.read_PDA(file_PDA)
-remaining_input = [] # ganti dengan hasil parse HTML, misal ['a', 'b', 'dfvsdfvdfvadfv']
+# remaining_input = [] # ganti dengan hasil parse HTML, misal ['a', 'b', 'dfvsdfvdfvadfv']
+remaining_input = ['<html', '>', '<head','id="', 'ini"', '>', '<title', '>', 'Simple', 'Webpage"', '</title>', '</head>', '<body', '>', '<h1', '>', 'Hello,', 'World!', '</h1>', '<h2', '>', 'Welcome', 'to', 'my', 'page', '</h2>', '<img', 'src="', './welcome.jpeg"', '>', '<p', '>', 'This', 'is', 'a', '<em', '>', 'simple', '</em>', 'webpage.', '</p>', '<div', 'id="', 'footer"', 'class="', 'footer"', '>', 'This', 'is', 'the', 'end', 'of', 'the', 'page', '</div>', '</body>', '</html>']
 
 found = True
 while (len(remaining_input) > 0):
     found = False
     for i in range(len(Transition_Functions)): # cari input
-        if((Transition_Functions[i][0] == state) and ((Transition_Functions[i][1] == remaining_input[0]) or ((remaining_input[0] not in input_alphabet) and ((Transition_Functions[i][1] == '&%') or (Transition_Functions[i][1] == '%"')))) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
+        if((Transition_Functions[i][0] == state) and ((Transition_Functions[i][1] == remaining_input[0]) or ((remaining_input[0] not in input_alphabet) and ( Transition_Functions[i][1] == '%'))) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
             found = True
             state, stack = Modify(stack, Transition_Functions[i])
+            print(stack, "  ", Transition_Functions[i] , "  ", remaining_input[0])
             remaining_input = remaining_input[1:]
             break
     if (not found): # cari input epsilon
