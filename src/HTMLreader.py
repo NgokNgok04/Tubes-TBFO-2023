@@ -98,5 +98,4 @@ def get_remainding_input(file_html) :
 
     # Hapus string kosong dari result_list
     result_list = [element.strip() for element in result_list if element.strip()]
-    print(result_list)
     return result_list
