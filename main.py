@@ -25,8 +25,6 @@ else:
     file_HTML = sys.argv[2]
 
 states_set, input_alphabet, stack_alphabet, state, stack, final_states, Transition_Functions = PDAReader.read_PDA(file_PDA)
-# remaining_input = [] # ganti dengan hasil parse HTML, misal ['a', 'b', 'dfvsdfvdfvadfv']
-# remaining_input = ['<html', '>', '<head', '>', '<title', '>', 'simple', 'webpage', '</title>', '</head>', '<body', '>', '<h2', '>', 'html', 'forms', '</h2>', '<form', 'action="', '%"', 'method="', 'post"', '>', '&%', '<h5', 'class="', '%"', '>', 'first', 'name:', '</h5>', '<br', '>', '<input', 'type="', '%"', 'id="', '%"', '>', '<br', '>', '<h5', 'class="', '%"', '>', 'last', 'name:', '</h5>', '<br', '>', '<input', 'type="', '%"', 'id="', '%"', '>', '<br', '>', '<br', '>', '<button', 'type="', '%"', '>', 'submit', '</button>', '</form>', '<p', '>', 'if', 'you', 'click', 'the', '"submit"', 'button,', 'the', 'form-data', 'will', 'be', 'sent', 'to', 'a', 'page', 'called', '"/action_page.php".', '</p>', '</body>', '</html>']
 remaining_input = get_remainding_input(file_HTML)
 
 found = True

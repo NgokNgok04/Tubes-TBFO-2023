@@ -53,8 +53,8 @@ C </script ScriptBody BC e
 HC <link Head ATT LinkHead_Head
 BC <link Body ATT LinkBody_Body
 BC <link Div ATT LinkBody_Div
-ATT rel=" LinkHead ATT Relation_RelationLinkHead
-ATT rel=" LinkBody ATT Relation_RelationLinkBody
+ATT rel=" LinkHead ATTCONTENT Relation_RelationLinkHead
+ATT rel=" LinkBody ATTCONTENT Relation_RelationLinkBody
 ATT href=" LinkHead ATTCONTENT HypertextReference_LinkHead
 ATT href=" LinkBody ATTCONTENT HypertextReference_LinkBody
 ATT href=" RelationLinkHead ATTCONTENT HypertextReference_RelationLinkHead
