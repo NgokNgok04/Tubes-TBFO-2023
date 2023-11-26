@@ -35,4 +35,4 @@
 - Python
 
 ## Contacts <a name="contact"></a>
- Created by [@Devinzen](https://github.com/Devinzenzhang), [@MatthewHutabarat](https://github.com/NgokNgok04), dan [@BertoTogatorop](https://github.com/BertoRichardo)
+ Created by [@Devinzen](https://github.com/Devinzenzhang), [@MatthewHutabarat](https://github.com/NgokNgok04), and [@BertoTogatorop](https://github.com/BertoRichardo)
