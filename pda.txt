@@ -31,8 +31,9 @@ BC &% $ BC $
 BOQ &% $ BOQ $
 TC &% $ TC $
 F &% Z F Z
+
 Q <html Z ATT Html_Z
-ATT > Html H Html_Z
+ATT > Html H Html
 BOQ </html> BodyHeadHtml F e
 H <head Html ATT HeadHtml
 ATT > HeadHtml HC Head_HeadHtml
