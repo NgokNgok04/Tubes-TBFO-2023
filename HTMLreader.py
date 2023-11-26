@@ -14,8 +14,6 @@ def get_raw_list(file_html):
 def get_remainding_input(file_html) :
     
     input_list = get_raw_list(file_html)
-    print(input_list , "\n\n\n")
-
 
     # Inisialisasi daftar untuk menyimpan hasil
     result_list = []
