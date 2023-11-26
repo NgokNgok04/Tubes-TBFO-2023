@@ -27,7 +27,6 @@ def get_remainding_input(file_html) :
     isComment = False
     isInAtt = False
     is_need_validation = False
-
     # Iterasi setiap elemen dalam input_list
     currstr = ""
     for element in input_list:
@@ -35,16 +34,18 @@ def get_remainding_input(file_html) :
             # if currstr in att : isatt = True
             
             if char == '>':
-                if  isTutup : 
+                if  isTutup and not isComment: 
                     currstr += char
                     result_list.append(currstr)
                     currstr = ""
                     isTutup = False
-                elif isComment: 
+                elif isComment : 
                     currstr += char
-                    result_list.append("&%")
-                    currstr = ""
-                    isComment = False
+                    if currstr[-3:] == "-->" :
+                        isComment = False
+                        isTutup = False
+                        result_list.append("&%")
+                        currstr = ""
                 else :
                     result_list.append(currstr)
                     currstr = ""
@@ -60,6 +61,8 @@ def get_remainding_input(file_html) :
                 elif currstr[:-2] in att : 
                     result_list.append(currstr)
                     isInAtt = True
+                elif isComment :
+                    currstr += char
                 elif isInAtt : 
                     if (result_list[-1])[:-2] in att : 
                         if is_need_validation : 
@@ -73,7 +76,9 @@ def get_remainding_input(file_html) :
                     isInAtt = False 
                     is_need_validation = False
             elif not isComment and currstr + char == '<!--':
-                currstr = "<!--" + char
+                currstr = "<!--" 
+                result_list.append("&%")
+                currstr = ""
                 isComment = True
                 isTutup = False
                 # isatt = False
@@ -86,11 +91,12 @@ def get_remainding_input(file_html) :
                 currstr += char; 
         
         
-        if  not(isTutup) and not(isComment) and not isInAtt and not is_need_validation:    
+        if  not(isTutup) and not(isComment) and not isInAtt and not is_need_validation :    
             result_list.append(currstr)
             currstr = ""
+       
 
     # Hapus string kosong dari result_list
     result_list = [element.strip() for element in result_list if element.strip()]
-
+    print(result_list)
     return result_list

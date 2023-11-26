@@ -258,7 +258,7 @@ ATT > HrForm BC e
 ATT > HrMethodForm BC e
 ATT > Hr C e
 BC <div Body ATT Div_Body
-BC <div Div ATT Div_Div+
+BC <div Div ATT Div_Div
 BC <div Form ATT Div_Form
 BC <div MethodForm ATT Div_MethodForm
 ATT > Div BC Div
