@@ -1,17 +1,30 @@
+##### States ######
 Z Q H HC B BC BOQ F TC ATT ATTCONTENT ATTFORM ATTBUTTON ATTINPUT C
-<html <head <body <title <link <script <h1 <h2 <h3 <h4 <h5 <h6 <p <br <em <b <abbr <strong <small <hr <div <a <img <button <form <input <table <tr <td <th </html> </head> </body> </title> </script> </h1> </h2> </h3> </h4> </h5> </h6> </p> </em> </b> </abbr> </strong> </small> </div> </a> </button> </form> </table> </tr> </td> </th> #% %" class=" id=" style=" rel=" href=" src=" alt=" type=" action=" method=" get" post" text" password" email" number" checkbox" submit" reset" button"
+
+##### Input Alphabet #####
+<html <head <body <title <link <script <h1 <h2 <h3 <h4 <h5 <h6 <p <br <em <b <abbr <strong <small <hr <div <a <img <button <form <input <table <tr <td <th </html> </head> </body> </title> </script> </h1> </h2> </h3> </h4> </h5> </h6> </p> </em> </b> </abbr> </strong> </small> </div> </a> </button> </form> </table> </tr> </td> </th> &% %" class=" id=" style=" rel=" href=" src=" alt=" type=" action=" method=" get" post" text" password" email" number" checkbox" submit" reset" button"
+
+##### Stack Alphabet #####
 Html HeadHtml BodyHeadHtml Class Id Style Head Body Title ScriptHead ScriptBody LinkHead LinkBody RelationLinkHead RelationLinkBody Relation HypertextReference Source H1 H2 H3 H4 H5 H6 P Br Em B Abbr Strong Small Hr Div A Img SourceImg Alternative Type TypeInput Input Button Form Table TableData TableHeader TableRow
+
+##### Start State #####
 Q
+
+##### Start Stack #####
 Z
+
+##### Final States #####
 F
+
+##### Transition Functions #####
 ATT class=" $ ATTCONTENT Class_$
 ATT id=" $ ATTCONTENT Id_$
 ATT style=" $ ATTCONTENT Style_$
 ATTCONTENT %" $ ATT e
-HC #% $ HC $
-BC #% $ BC $
-BOQ #% $ BOQ $
-TC #% $ TC $
+HC &% $ HC $
+BC &% $ BC $
+BOQ &% $ BOQ $
+TC &% $ TC $
 Q <html Z ATT Html_Z
 ATT > Html H Html_Z
 BOQ </html> BodyHeadHtml F e
