@@ -21,10 +21,11 @@
 
 ## Usage <a name="usage"></a>
 1. Place your HTML file in tests folder
-2. Perform this in your terminal
+2. Change directory to src
+3. Perform this in your terminal
    python main.py pda.txt <your_file_name>
    replace <your_file_name> with your actual HTML file name
-3. The result will be shown after.
+4. The result will be shown after.
    - Accepted for valid HTML syntax
    - Syntax Error for invalid HTML syntax.
      For Syntax Error message, the program will also show 
