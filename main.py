@@ -29,7 +29,7 @@ found = True
 while (len(remaining_input) > 0):
     found = False
     for i in range(len(Transition_Functions)): # cari input
-        if((Transition_Functions[i][0] == state) and (Transition_Functions[i][1] == remaining_input[0]) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
+        if((Transition_Functions[i][0] == state) and ((Transition_Functions[i][1] == remaining_input[0]) or ((remaining_input[0] not in input_alphabet) and ((Transition_Functions[i][1] == '&%') or (Transition_Functions[i][1] == '%"')))) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
             found = True
             state, stack = Modify(stack, Transition_Functions[i])
             remaining_input = remaining_input[1:]
