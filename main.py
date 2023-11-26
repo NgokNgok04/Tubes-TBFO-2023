@@ -34,7 +34,6 @@ while (len(remaining_input) > 0):
         if((Transition_Functions[i][0] == state) and ((Transition_Functions[i][1] == remaining_input[0]) or ((remaining_input[0] not in input_alphabet) and ( Transition_Functions[i][1] == '%'))) and ((Transition_Functions[i][2] == stack[0]) or (Transition_Functions[i][2] == '$'))):
             found = True
             state, stack = Modify(stack, Transition_Functions[i])
-            print(stack, "  ", Transition_Functions[i] , "  ", remaining_input[0])
             remaining_input = remaining_input[1:]
             break
     if (not found): # cari input epsilon
